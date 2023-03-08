@@ -341,6 +341,9 @@
                         <Param id="inFlash" value="true"/>
                     </Personality>
                 </Block>
+                <Block location="ioss[0].port[7].pin[0]">
+                    <Alias value="CYBSP_TRACE_CLK"/>
+                </Block>
                 <Block location="ioss[0].port[7].pin[1]">
                     <Alias value="CYBSP_CINA"/>
                     <Personality template="pin" version="3.0">
@@ -511,18 +514,22 @@
                 <Block location="ioss[0].port[9].pin[0]">
                     <Alias value="CYBSP_A8"/>
                     <Alias value="CYBSP_J2_2"/>
+                    <Alias value="CYBSP_TRACE_DATA3"/>
                 </Block>
                 <Block location="ioss[0].port[9].pin[1]">
                     <Alias value="CYBSP_A9"/>
                     <Alias value="CYBSP_J2_4"/>
+                    <Alias value="CYBSP_TRACE_DATA2"/>
                 </Block>
                 <Block location="ioss[0].port[9].pin[2]">
                     <Alias value="CYBSP_A10"/>
                     <Alias value="CYBSP_J2_6"/>
+                    <Alias value="CYBSP_TRACE_DATA1"/>
                 </Block>
                 <Block location="ioss[0].port[9].pin[3]">
                     <Alias value="CYBSP_A11"/>
                     <Alias value="CYBSP_J2_8"/>
+                    <Alias value="CYBSP_TRACE_DATA0"/>
                 </Block>
                 <Block location="ioss[0].port[9].pin[4]">
                     <Alias value="CYBSP_A12"/>
@@ -543,7 +550,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Personality>
                 </Block>
-                <Block location="peri[0].div_8[1]">
+                <Block location="peri[0].div_16[15]">
                     <Personality template="pclk" version="3.0">
                         <Param id="intDivider" value="1"/>
                         <Param id="fracDivider" value="0"/>
@@ -555,6 +562,14 @@
                     <Alias value="CYBSP_CS_CLK_DIV"/>
                     <Personality template="pclk" version="3.0">
                         <Param id="intDivider" value="256"/>
+                        <Param id="fracDivider" value="0"/>
+                        <Param id="startOnReset" value="true"/>
+                    </Personality>
+                </Block>
+                <Block location="peri[0].div_8[7]">
+                    <Alias value="CYBSP_TRACE_CLK_DIV"/>
+                    <Personality template="pclk" version="3.0">
+                        <Param id="intDivider" value="1"/>
                         <Param id="fracDivider" value="0"/>
                         <Param id="startOnReset" value="true"/>
                     </Personality>
@@ -698,7 +713,7 @@
             <Netlist>
                 <Net>
                     <Port name="cpuss[0].dap[0].clock_trace_in[0]"/>
-                    <Port name="peri[0].div_8[1].clk[0]"/>
+                    <Port name="peri[0].div_8[7].clk[0]"/>
                 </Net>
                 <Net>
                     <Port name="cpuss[0].dap[0].swj_swclk_tclk[0]"/>
