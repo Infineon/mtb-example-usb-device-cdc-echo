@@ -281,6 +281,9 @@
                 <Block location="ioss[0].port[2].pin[6]">
                     <Alias value="CYBSP_WIFI_WL_REG_ON"/>
                 </Block>
+                <Block location="ioss[0].port[2].pin[7]">
+                    <Alias value="CYBSP_BT_DEVICE_WAKE"/>
+                </Block>
                 <Block location="ioss[0].port[3].pin[0]">
                     <Alias value="CYBSP_BT_UART_RX"/>
                 </Block>
@@ -295,9 +298,6 @@
                 </Block>
                 <Block location="ioss[0].port[3].pin[4]">
                     <Alias value="CYBSP_BT_POWER"/>
-                </Block>
-                <Block location="ioss[0].port[3].pin[5]">
-                    <Alias value="CYBSP_BT_DEVICE_WAKE"/>
                 </Block>
                 <Block location="ioss[0].port[4].pin[0]">
                     <Alias value="CYBSP_BT_HOST_WAKE"/>
@@ -861,6 +861,19 @@
                     </Arm>
                 </Mux>
             </Netlist>
+        </Device>
+        <Device mpn="LBEE5PK2AE/CYW4373EUBGT">
+            <BlockConfig>
+                <Block location="bt[0].power[0]">
+                    <Personality template="connectivity_bt" version="1.0">
+                        <Param id="hostWakePin" value=""/>
+                        <Param id="hostWakeIrqEvent" value="CYCFG_BT_WAKE_EVENT_ACTIVE_LOW"/>
+                        <Param id="devWakePin" value=""/>
+                        <Param id="devWakePolarity" value="CYCFG_BT_WAKE_EVENT_ACTIVE_LOW"/>
+                    </Personality>
+                </Block>
+            </BlockConfig>
+            <Netlist/>
         </Device>
     </Devices>
     <ConfiguratorData/>
